@@ -39,37 +39,6 @@ public class LearnWebDriverBasics {
         driver.manage().window().maximize();
     }
 
-    // Let's Kode It Element Practice
-    @Test
-    public void testKodeItComboBox() throws Exception {
-        WebElement comboBox = driver.findElement(By.id("carselect"));
-        Select select = new Select(comboBox);
-//        select.selectByValue("benz");
-//        select.selectByVisibleText("Benz");
-        select.selectByIndex(2);
-
-        Thread.sleep(3000);
-    }
-
-    @Test
-    public void testKodeItMultiSelectComboBox() {
-        WebElement multiComboBox = driver.findElement(By.id("multiple-select-example"));
-        Select select = new Select(multiComboBox);
-        select.selectByIndex(1);
-
-        webDriverWait = new WebDriverWait(driver, 10);
-        webDriverWait.until(ExpectedConditions.elementSelectionStateToBe(By.xpath("//option[@value=\"orange\"]"), true));
-
-        select.selectByIndex(0);
-
-        webDriverWait.until(ExpectedConditions.elementSelectionStateToBe(By.xpath("//option[@value=\"apple\"]"), true));
-
-        select.selectByIndex(2);
-        webDriverWait.until(ExpectedConditions.elementSelectionStateToBe(By.xpath("//option[@value=\"peach\"]"), true));
-
-        System.out.println("WE'VE SELECTED ALL THE ELEMENTS IN THE MULTI COMBO BOX");
-    }
-
     // Sephora.com Test
 
 //    @Test
